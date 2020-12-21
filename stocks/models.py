@@ -14,6 +14,9 @@ class Country(models.Model):
     def __str__(self):
         return self.code_2l
 
+    class Meta:
+        verbose_name_plural = "Countries"
+
 
 class Company(models.Model):
     name = models.CharField(max_length=200)
@@ -26,3 +29,6 @@ class Company(models.Model):
 
     def __str__(self):
         return self.name_abbr
+
+    class Meta:
+        verbose_name_plural = "Companies"
