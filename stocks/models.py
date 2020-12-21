@@ -18,9 +18,20 @@ class Country(models.Model):
         verbose_name_plural = "Countries"
 
 
+class Ticker(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = "Tickers"
+
+
 class Company(models.Model):
     name = models.CharField(max_length=200)
-    name_abbr = models.CharField(max_length=4)
+    ticker = models.ForeignKey(Ticker, on_delete=models.CASCADE)
     country = models.ForeignKey(Country, on_delete=models.CASCADE)
     web = models.CharField(max_length=200)
     sector = models.CharField(max_length=200)
