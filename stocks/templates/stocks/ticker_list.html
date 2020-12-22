@@ -1,20 +1,9 @@
-{% load static %}
-<html>
-    <head>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/stocks.css' %}">
-        <title>Streamline</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Streamline</a></h1>
-        </div>
+{% extends 'stocks/base.html' %}
 
-        {% for ticker in tickers %}
-        <div>
+{% block content %}
+    {% for ticker in tickers %}
+        <div class="ticker">
             <h2><a href="">{{ ticker.name }}</a></h2>
         </div>
-        {% endfor %}
-    </body>
-</html>
+    {% endfor %}
+{% endblock %}
