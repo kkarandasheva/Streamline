@@ -16,6 +16,9 @@
     font-size: x-large;
 }
 
+.fa-vc{
+    line-height:inherit!important;
+}
 
 .container-fluid {
     height: 90%;
