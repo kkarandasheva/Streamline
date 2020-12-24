@@ -1,0 +1,38 @@
+{% extends 'stocks/base.html' %}
+
+{% block sidebar %}
+    <!-- Start of Sidebar -->
+    <div class="sidebar-sticky mt-2 ml-n2">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home_tickers' %}">
+                    <span class="fas fa-briefcase fa-vc"></span>
+                    Tickers
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="#">
+                    <span class="fas fa-chart-line fa-vc"></span>
+                    Charts
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="#">
+                    <span class="fas fa-city fa-vc"></span>
+                    Companies
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <span class="far fa-folder-open fa-vc"></span>
+                    Collection
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End of Sidebar -->
+{% endblock %}
+
+{% block content %}
+    <h1>Home page</h1>
+{% endblock %}
