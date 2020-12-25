@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.utils import timezone
+from django.contrib.auth import authenticate, login
 from .models import Ticker
 
 
