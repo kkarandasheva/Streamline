@@ -3,7 +3,7 @@
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-        <link rel="stylesheet" href="{% static 'css/stocks.css' %}">
+        <link rel="stylesheet" href="{% static 'css/registration.css' %}">
         <link href="//fonts.googleapis.com/css?family=Orbitron&subset=latin,latin-ext" rel="stylesheet" type="text/css">
         <title>Streamline</title>
     </head>
@@ -20,10 +20,20 @@
 
         <!-- Content -->
         <div class="container-fluid" id="loginContainer">
-            <div class="row">
-                {% block content %}
-                {% endblock %}
+            <div class="row"  id="topLine"></div>
+            <div class="row" id="logLine">
+                <div class="col-md-3 content container" id="leftSpace"></div>
+                <div class="col-md-2 content container" id="loginSpaceLeft">
+                    {% block content1 %}
+                    {% endblock %}
+                </div>
+                <div class="col-md-4 content container" id="loginSpaceRight">
+                    {% block content2 %}
+                    {% endblock %}
+                </div>
+                <div class="col-md-3 content container" id="rightSpace"></div>
             </div>
+            <div class="row"  id="bottomLine"></div>
         </div>
         <!-- End of Content -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
