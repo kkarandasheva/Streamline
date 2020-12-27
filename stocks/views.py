@@ -23,6 +23,18 @@ def home_tickers(request):
 
 
 @login_required
+def home_companies(request):
+    tickers = Ticker.objects.order_by('name')
+    return render(request, 'stocks/home_companies.html', {'tickers': tickers})
+
+
+@login_required
+def home_charts(request):
+    tickers = Ticker.objects.order_by('name')
+    return render(request, 'stocks/home_charts.html', {'tickers': tickers})
+
+
+@login_required
 def study_page(request):
     return render(request, 'stocks/study.html', {})
 
