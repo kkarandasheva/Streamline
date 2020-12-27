@@ -11,6 +11,12 @@ def home_page(request):
 
 
 @login_required
+def home_collection(request):
+    tickers = Ticker.objects.order_by('name')
+    return render(request, 'stocks/home_collection.html', {'tickers': tickers})
+
+
+@login_required
 def home_tickers(request):
     tickers = Ticker.objects.order_by('name')
     return render(request, 'stocks/home_tickers.html', {'tickers': tickers})

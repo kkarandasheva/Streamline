@@ -1,0 +1,26 @@
+{% extends 'stocks/home.html' %}
+
+{% block content %}
+    <h1>Collection</h1>
+    <br>
+    <h2>My tickers</h2>
+    {% for ticker in tickers %}
+        <div class="ticker">
+            <h5><a href="">{{ ticker.name }}</a></h5>
+        </div>
+    {% endfor %}
+    <br>
+    <h2>My companies</h2>
+    {% for ticker in tickers %}
+        <div class="ticker">
+            <h5><a href="">{{ ticker.name }}</a></h5>
+        </div>
+    {% endfor %}
+    <br>
+    <h2>My Charts</h2>
+    {% for ticker in tickers %}
+        <div class="ticker">
+            <h5><a href="">{{ ticker.name }}</a></h5>
+        </div>
+    {% endfor %}
+{% endblock %}

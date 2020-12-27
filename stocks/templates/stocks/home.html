@@ -5,6 +5,12 @@
     <div class="sidebar-sticky mt-2 ml-n2">
         <ul class="nav flex-column">
             <li class="nav-item">
+                <a class="nav-link" href="{% url 'home_collection' %}">
+                    <span class="far fa-folder-open fa-vc"></span>
+                    Collection
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{% url 'home_tickers' %}">
                     <span class="fas fa-briefcase fa-vc"></span>
                     Tickers
@@ -20,12 +26,6 @@
                 <a class="nav-link" href="#">
                     <span class="fas fa-city fa-vc"></span>
                     Companies
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <span class="far fa-folder-open fa-vc"></span>
-                    Collection
                 </a>
             </li>
         </ul>
