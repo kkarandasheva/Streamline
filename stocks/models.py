@@ -12,34 +12,35 @@ class Country(models.Model):
     name = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.code_2l
+        return self.name
 
     class Meta:
         verbose_name_plural = "Countries"
 
 
-class Ticker(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=20)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name_plural = "Tickers"
-
-
 class Company(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
-    ticker = models.ForeignKey(Ticker, on_delete=models.CASCADE)
-    country = models.ForeignKey(Country, on_delete=models.CASCADE)
+    country = models.CharField(max_length=200)
     web = models.CharField(max_length=200)
     sector = models.CharField(max_length=200)
     industry = models.CharField(max_length=200)
     employees_count = models.IntegerField()
 
     def __str__(self):
-        return self.name_abbr
+        return self.name
 
     class Meta:
         verbose_name_plural = "Companies"
+
+
+class Ticker(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=20)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = "Tickers"
