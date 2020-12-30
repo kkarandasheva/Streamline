@@ -12,7 +12,7 @@ django.setup()
 
 from django.core.management.base import BaseCommand, CommandError
 from Streamline.settings import *
-from stocks.models import Ticker
+from stocks.models import Ticker, Company
 from get_all_tickers import get_tickers as gt
 
 
@@ -23,4 +23,5 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         list_of_tickers = gt.get_tickers()
         for ticker in list_of_tickers:
-            Ticker.objects.create(name=ticker)
+            print(ticker)
+            Ticker.objects.get_or_create(name=ticker, company=Company(id=1))
